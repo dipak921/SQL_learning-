@@ -33,3 +33,14 @@ INSERT INTO dataofcustomer  VALUES('C00010','Shankar',null,'Nair','Chennai',90,'
 
 select * from dataofcustomer;
 
+select count(age) as total_customer from dataofcustomer;
+
+select count(age) as customer_from__Delhi from dataofcustomer where city= "Delhi";
+
+select avg(age) as average_age from dataofcustomer;
+
+select sum(age) as sum_of_age from dataofcustomer;
+
+select count(fname), city from dataofcustomer group by city;
+
+
