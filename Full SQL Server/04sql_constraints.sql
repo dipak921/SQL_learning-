@@ -34,3 +34,35 @@ select * from Emp;
 
 /* Check key */
 
+create table Voter_List(Id int primary key, Voter_Name varchar(30),Voter_Age int check(Voter_Age >=18));
+
+insert into Voter_List(Id, Voter_Name, Voter_Age) values
+(1,'Sagar',20),
+(2,'Dipak',34),
+(3,'Rahul',28),
+(4,'Amit',30),
+(5,'Priya',25),
+(6,'Sneha',27),
+(7,'Rohit',32),
+(8,'Pooja',24),
+(9,'Kunal',29),
+(10,'Neha',26);
+
+/* THIS QUERY SHOW ERROR */
+insert into Voter_List(Id,Voter_Name, Voter_Age) values
+(3,'Ram',2);
+
+
+select *from Voter_List;
+
+/* DEFAULT CONSTRINT */
+create table student(Std_Id int ,Std_Name varchar(30),Std_Course varchar(30) default ('BA'));
+
+insert into student values(101,'Shubham','MBA');
+insert into student values(102,'Pandurang','BCS');
+insert into student values(103,'Yash','');
+/* If you want the default course (BA), write: */
+INSERT INTO Student (Std_Id, Std_Name)
+VALUES (104,'Kunal');
+
+select * from student;
