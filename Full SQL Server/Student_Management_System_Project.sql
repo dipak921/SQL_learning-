@@ -83,11 +83,26 @@ values
 
 
 select *from marks;
+-- -------------------------------------------------------------------------------
+-- LOGICAL WORKING
 
+select m.mark_id, m.marks, s.subject_name,student_name from marks as m 
+join subjectt s on m.subject_id = s.subject_id
+join students st on m.student_id = st.student_id
+ order by mark_id;
+-- --------------------------------------------------------------------------------
 
+SELECT 
+s.student_id, 
+s.student_name,
+SUM(m.marks) AS sum, AVG(m.marks) as avgValue 
+FROM students s 
+JOIN marks m ON s.student_id = m.student_id
+GROUP BY s.student_id, s.student_name ;
+-- ---------------------------------------------------------------------------------
 
-
-
+SELECT COUNT(*) AS total_students
+FROM students;
 
 
 
